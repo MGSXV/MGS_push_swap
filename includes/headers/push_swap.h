@@ -6,7 +6,14 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/03/29 22:36:55 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/03/29 22:48:06 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
+
+#endif
