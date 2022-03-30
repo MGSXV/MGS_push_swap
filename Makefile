@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/29 22:26:49 by sel-kham          #+#    #+#              #
-#    Updated: 2022/03/30 16:23:49 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/03/30 17:03:32 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,15 +30,25 @@ HEADERS := $(HEADERS_DIR)/push_swap.h
 PRINTF := $(PRINTF_DIR)/libftprintf.a
 LIBFT := $(LIBFT_DIR)/libft.a
 
+HELPERS_DIR := $(SRC_DIR)/helpers
+
+SRC := $(HELPERS_DIR)/ft_error.c
+
+OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
+
 MAIN := $(SRC_DIR)/main.c
 
 NAME := push_swap
 
 all: $(NAME)
 
-$(NAME): $(MAIN) $(HEADERS) $(LIBFT) $(PRINTF)
+$(NAME): $(MAIN) $(HEADERS) $(LIBFT) $(PRINTF) $(OBJ)
 	@echo "$(GREEN)Making $(WHITE)push_swap file..."
-	@$(CC) $(CFLAGS) $(MAIN) $(LIBFT) $(PRINTF) -o $(NAME)
+	@$(CC) $(CFLAGS) $(MAIN) $(LIBFT) $(PRINTF) $(OBJ) -o $(NAME)
+
+$(OBJ_DIR)/%.o: $(HELPERS_DIR)/%.c
+	@mkdir -p obj
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT): $(shell find $(LIBFT_DIR) -name "*.c" -type f)
 	@echo "$(GREEN)Making $(WHITE)libft files..."
