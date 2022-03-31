@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:55:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/03/30 17:04:51 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/03/30 18:12:23 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@ struct s_node
 {
 	struct s_node	*next_node;
 	struct s_node	*previous_node;
-	int				value;
+	int				data;
 }	typedef t_node;

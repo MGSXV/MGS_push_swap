@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/03/30 16:56:15 by sel-kham         ###   ########.fr       */
+/*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
+/*   Updated: 2022/03/31 22:01:29 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/headers/push_swap.h"
 
-#include "types.h"
-# include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
+int	main(int c, char **v)
+{
+	int		i;
+	t_node	**head;
 
-void	ft_error(const char *err_msg);
-
-#endif
+	i = -1;
+	head = (t_node **) malloc(sizeof(t_node *));
+	if (!head)
+		ft_error("Could not initialize the program!\n");
+	if (c > 3)
+    	ft_error("Not enough arguements!\n");
+	while (++i < c - 1)
+	{
+		  
+	}
+	
+}
