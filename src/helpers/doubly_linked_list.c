@@ -12,15 +12,27 @@
 
 #include "../../includes/headers/push_swap.h"
 
-t_node	*t_new_node(int data, t_node *node)
+t_node	*ft_new_node(int data)
 {
 	t_node	*new_node;
 
 	new_node = (t_node *) malloc(sizeof(t_node));
+	if (!new_node)
+		return (NULL);
 	new_node->data = data;
 	new_node->next_node = NULL;
-	new_node->previous_node = node;
+	new_node->previous_node = NULL;
 	return (new_node);
 }
 
-t_node
+void	ft_add_node_at_first(int data, t_node **head)
+{
+	t_node	*new_node;
+
+	new_node = ft_new_node(data);
+	if (!new_node)
+		return ;
+	(*head)->next_node->previous_node = new_node;
+	new_node->next_node = (*head);
+	(*head) = new_node;
+}

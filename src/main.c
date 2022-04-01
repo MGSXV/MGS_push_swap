@@ -15,7 +15,7 @@
 int	main(int c, char **v)
 {
 	int		i;
-	t_node	**head;
+	t_node	*head;
 
 	i = -1;
 	head = (t_node **) malloc(sizeof(t_node *));
