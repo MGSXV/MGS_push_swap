@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/29 22:26:49 by sel-kham          #+#    #+#              #
-#    Updated: 2022/03/30 17:03:32 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/04/04 22:30:24 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,10 @@ PRINTF := $(PRINTF_DIR)/libftprintf.a
 LIBFT := $(LIBFT_DIR)/libft.a
 
 HELPERS_DIR := $(SRC_DIR)/helpers
+APP_DIR := $(SRC_DIR)/app
 
-SRC := $(HELPERS_DIR)/ft_error.c
+SRC := $(HELPERS_DIR)/ft_error.c $(HELPERS_DIR)/doubly_linked_list.c \
+	$(APP_DIR)/manage_stacks.c
 
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
@@ -47,6 +49,10 @@ $(NAME): $(MAIN) $(HEADERS) $(LIBFT) $(PRINTF) $(OBJ)
 	@$(CC) $(CFLAGS) $(MAIN) $(LIBFT) $(PRINTF) $(OBJ) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(HELPERS_DIR)/%.c
+	@mkdir -p obj
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/%.o: $(APP_DIR)/%.c
 	@mkdir -p obj
 	@$(CC) $(CFLAGS) -c $< -o $@
 
