@@ -6,22 +6,27 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:55:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/05 05:05:18 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/05 23:18:04 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef TYPES_H
+# define TYPES_H
 
 # include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
 
-struct s_node
+typedef struct s_node
 {
 	struct s_node	*next_node;
 	struct s_node	*previous_node;
 	int				data;
-}	typedef t_node;
+}	t_node;
 
-struct s_stack
+typedef struct s_stack
 {
 	t_node	*head;
 	t_node	*tail;
-}	typedef t_stack;
+}	t_stack;
+
+#endif
