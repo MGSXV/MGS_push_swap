@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:06:34 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/04 22:00:09 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/05 23:04:07 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,18 @@ t_node	*ft_new_node(int data)
 	return (new_node);
 }
 
-void	ft_add_node_at_first(t_node *new_node, t_node **head)
+void	ft_add_node_at_first(t_stack **stack, t_node *new_node)
 {
-	static t_node	*tail;
-
-	
-	if (!(*head))
+	if (!((*stack)->head))
 	{
-		*head = new_node;
-		tail = new_node;
+		(*stack)->head = new_node;
+		(*stack)->tail = new_node;
 	}
 	else
 	{
-		(*head)->previous_node = new_node;
-		new_node->next_node = *head;
-		*head = new_node;
-		(*head)->previous_node = tail;
+		(*stack)->head->previous_node = new_node;
+		new_node->next_node =(*stack)->head ;
+		(*stack)->head = new_node;
+		(*stack)->head->previous_node = (*stack)->tail;
 	}
 }
