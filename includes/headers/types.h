@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:55:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/04 03:10:14 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/05 05:05:18 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ struct s_node
 
 struct s_stack
 {
-	t_list	*head;
-	t_list	*tail;
+	t_node	*head;
+	t_node	*tail;
 }	typedef t_stack;
