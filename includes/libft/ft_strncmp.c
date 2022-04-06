@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:13:48 by sel-kham          #+#    #+#             */
-/*   Updated: 2021/11/06 11:44:06 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:22:04 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -17,6 +18,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	*str1;
 	unsigned char	*str2;
 
+	if (ft_strlen(s1) != ft_strlen(s2))
+		return (-1);
 	i = 0;
 	str1 = (unsigned char *) s1;
 	str2 = (unsigned char *) s2;
