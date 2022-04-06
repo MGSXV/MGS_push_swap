@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2021/11/12 01:42:29 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/06 22:23:33 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_isspace(int c)
@@ -21,12 +22,12 @@ static int	ft_isspace(int c)
 		res = 1;
 	return (res);
 }
-
-int	ft_atoi(const char *str)
+ 
+long	ft_atoi(const char *str)
 {
-	int	result;
-	int	i;
-	int	sign;
+	long int	result;
+	int			i;
+	int			sign;
 
 	result = 0;
 	i = 0;
