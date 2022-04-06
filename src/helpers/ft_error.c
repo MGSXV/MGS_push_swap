@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:51:38 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/06 20:33:15 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/06 22:57:38 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Try \"--help\" for more information.\n");
 passed as fllows:\n$> ./push_swap arg1 arg2 arg3 arg4 ...\n");
 		}
 		else
-			ft_error("Error!\n");
+			if (!is_str_digit(av) || !is_in_int_range(ft_atoi(av)))
+				ft_error("Error!\n");
 	}
 }
