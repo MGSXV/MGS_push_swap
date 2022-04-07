@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 23:24:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/07 03:09:35 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/07 05:05:43 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,19 @@ int	ft_is_num_dup(t_node **head, int num)
 	return (1);
 }
 
-static void	ft_check_args(int ac, char **av)
+static void	ft_check_args(int ac, char **av, t_stack **stack)
 {
 	if (ac == 1)
 		ft_error("Invalid number of arguments!\n\
-Try \"--help\" for more information.\n");
+Try \"--help\" for more information.\n", stack);
 	if (ac == 2)
 	{
 		if (!ft_strncmp(av[1], "--help", 6))
 			ft_error("\"push_swap\" requires minimum of one argument \
-passed as fllows:\n$> ./push_swap arg1 arg2 arg3 arg4 ...\n");
+passed as fllows:\n$> ./push_swap arg1 arg2 arg3 arg4 ...\n", stack);
 		else
 			if (!is_str_digit(av[1]) || !is_in_int_range(ft_atoi(av[1])))
-				ft_error("Error!\n");
+				ft_error("Error!\n", stack);
 	}
 }
 
@@ -80,7 +80,7 @@ void	ft_parssing_args(int ac, char **av, t_stack **stack)
 	long	num;
 
 	i = ac;
-	ft_check_args(ac, av);
+	ft_check_args(ac, av, stack);
 	if (ac > 2)
 	{
 		while (--i)
@@ -88,7 +88,7 @@ void	ft_parssing_args(int ac, char **av, t_stack **stack)
 			num = ft_atoi(av[i]);
 			if (!is_str_digit(av[i]) || !is_in_int_range(num)
 				|| !ft_is_num_dup(&(*stack)->head, num))
-				ft_error("Error!\n");
+				ft_error("Error!\n", stack);
 			ft_add_node_at_first(stack, ft_new_node(num));
 		}
 	}

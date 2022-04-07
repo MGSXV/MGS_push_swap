@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/07 03:01:12 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/07 05:36:35 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include<limits.h>
 # include "types.h"
 
-void	ft_error(const char *err_msg);
+void	ft_error(const char *err_msg, t_stack **stack);
+void	ft_free_all(t_stack **stack);
 int		is_in_int_range(long n);
 char	*is_str_digit(char *s);
 void	ft_parssing_args(int ac, char **av, t_stack **stack);
