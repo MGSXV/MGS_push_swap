@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/03/31 22:01:29 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/07 02:18:19 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 int	main(int c, char **v)
 {
+	t_stack	*stack_a;
+	t_node	*tmp;
 	int		i;
-	t_node	*head;
 
-	i = -1;
-	head = (t_node **) malloc(sizeof(t_node *));
-	if (!head)
-		ft_error("Could not initialize the program!\n");
-	if (c > 3)
-    	ft_error("Not enough arguements!\n");
-	while (++i < c - 1)
+	stack_a = (t_stack *) malloc(sizeof(t_stack));
+	if (!stack_a)
+		return (0);
+	stack_a->head = NULL;
+	ft_parssing_args(c, v, &stack_a);
+	i = 0;
+	tmp = stack_a->head;
+	while(tmp)
 	{
-		  
+		ft_printf("Node %d: %d\n", ++i, tmp->data);
+		tmp = tmp->next_node;
 	}
-	
+	return (0);
 }
