@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/06 22:23:33 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/07 00:01:06 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_isspace(int c)
 		res = 1;
 	return (res);
 }
- 
+
 long	ft_atoi(const char *str)
 {
 	long int	result;

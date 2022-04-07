@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/06 22:56:14 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/07 00:00:49 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	ft_error(const char *err_msg);
 void	ft_handle_args(int ac, char *av);
-int	    is_in_int_range(long n);
+int		is_in_int_range(long n);
 char	*is_str_digit(char *s);
 void	ft_parssing_args(int ac, char **av);
 t_node	*ft_new_node(int data);
