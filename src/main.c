@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/07 05:37:59 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:06:02 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	main(int c, char **v)
 		ft_printf("Node %d: %d\n", ++i, tmp->data);
 		tmp = tmp->next_node;
 	}
+	ft_free_all(&stack_a);
 	return (0);
 }
