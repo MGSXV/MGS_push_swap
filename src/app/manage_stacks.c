@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 22:21:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/07 23:38:17 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/08 22:42:40 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 
 void	swap_stack(t_stack **stack, char s)
 {
+	t_node	*tmp;
+
+	if (!(*stack)->head || !(*stack)->head->next_node)
+		return ;
+	tmp = (*stack)->head;
+	(*stack)->head = (*stack)->head->next_node;
+	tmp->next_node = (*stack)->head->next_node;
+	(*stack)->head->previous_node = (*stack)->tail;
+	(*stack)->head->next_node = tmp;
+	tmp->previous_node = (*stack)->head;
+	if (tmp->next_node)
+		tmp->next_node->previous_node = tmp;
 	if (s)
 		ft_printf("s%c\n", s);
 }
