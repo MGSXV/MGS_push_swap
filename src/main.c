@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/07 02:18:19 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/07 05:37:59 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int c, char **v)
 	ft_parssing_args(c, v, &stack_a);
 	i = 0;
 	tmp = stack_a->head;
-	while(tmp)
+	while (tmp)
 	{
 		ft_printf("Node %d: %d\n", ++i, tmp->data);
 		tmp = tmp->next_node;
