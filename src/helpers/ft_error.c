@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:51:38 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/07 05:35:57 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:06:45 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_free_all(t_stack **stack)
 			(*stack)->head = NULL;
 			free((*stack)->head);
 		}
-		stack = NULL;
-		free(stack);
+		*stack = NULL;
+		free(*stack);
 	}
 }
