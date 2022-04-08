@@ -53,4 +53,5 @@ dkms.conf
 
 #costume
 checker_Mac
+push_swap
 *.json
