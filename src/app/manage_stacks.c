@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 22:21:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/10 02:10:41 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:44:32 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,10 @@ void	swap_stack(t_stack **stack, char s)
 		ft_printf("s%c\n", s);
 }
 
-void	sswap_stack(t_stack **stack_a, t_stack **stack_b)
-{
-	swap_stack(stack_a, '\0');
-	swap_stack(stack_b, '\0');
-	ft_printf("ss\n");
-}
-// Takes the first element at the top of the src_stack and push it to the top of dst_stack
+/*
+ *	Takes the top of the src_stack and push it to the top of dst_stack
+ */
+
 void	push_stack(t_stack **src_stack, t_stack **dst_stack, char s)
 {
 	t_node	*tmp;
@@ -73,13 +70,6 @@ void	rotate_stack(t_stack **stack, char s)
 	}
 }
 
-void	rrotate_stack(t_stack **stack_1, t_stack **stack_2)
-{
-	rotate_stack(stack_1, '\0');
-	rotate_stack(stack_2, '\0');
-	ft_printf("rr\n");
-}
-
 void	reverse_rotate_stack(t_stack **stack, char s)
 {
 	t_node	*tmp;
@@ -97,11 +87,4 @@ void	reverse_rotate_stack(t_stack **stack, char s)
 				ft_printf("r%c\n", s);
 		}
 	}
-}
-
-void	rreverse_rotate_stack(t_stack **stack_1, t_stack **stack_2)
-{
-	reverse_rotate_stack(stack_1, '\0');
-	reverse_rotate_stack(stack_2, '\0');
-	ft_printf("rrr\n");
 }
