@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 22:21:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/10 01:25:46 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:10:41 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,21 @@ void	push_stack(t_stack **src_stack, t_stack **dst_stack, char s)
 
 void	rotate_stack(t_stack **stack, char s)
 {
-	if (s)
-		ft_printf("r%c\n", s);
+	t_node	*tmp;
+
+	if (stack && *stack)
+	{
+		if ((*stack)->head)
+		{
+			tmp = (*stack)->head;
+			(*stack)->head = (*stack)->head->next_node;
+			tmp->next_node = NULL;
+			(*stack)->tail->next_node = tmp;
+			(*stack)->tail = tmp;
+			if (s)
+				ft_printf("r%c\n", s);
+		}
+	}
 }
 
 void	rrotate_stack(t_stack **stack_1, t_stack **stack_2)
@@ -69,8 +82,21 @@ void	rrotate_stack(t_stack **stack_1, t_stack **stack_2)
 
 void	reverse_rotate_stack(t_stack **stack, char s)
 {
-	if (s)
-		ft_printf("r%c\n", s);
+	t_node	*tmp;
+
+	if (stack && *stack)
+	{
+		if ((*stack)->head)
+		{
+			tmp = (*stack)->tail;
+			(*stack)->tail = tmp->previous_node;
+			(*stack)->tail->next_node = NULL;
+			tmp->next_node = (*stack)->head;
+			(*stack)->head = tmp;
+			if (s)
+				ft_printf("r%c\n", s);
+		}
+	}
 }
 
 void	rreverse_rotate_stack(t_stack **stack_1, t_stack **stack_2)
