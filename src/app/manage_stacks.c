@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 22:21:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/08 22:42:40 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/10 01:25:46 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,22 @@ void	sswap_stack(t_stack **stack_a, t_stack **stack_b)
 	swap_stack(stack_b, '\0');
 	ft_printf("ss\n");
 }
-
-void	push_stack(t_stack **stack_1, t_stack **stack_2, char s)
+// Takes the first element at the top of the src_stack and push it to the top of dst_stack
+void	push_stack(t_stack **src_stack, t_stack **dst_stack, char s)
 {
-	ft_printf("p%c\n", s);
+	t_node	*tmp;
+
+	if (src_stack && *src_stack)
+	{
+		if ((*src_stack)->head)
+		{
+			tmp = (*src_stack)->head->next_node;
+			ft_add_node_at_first(dst_stack, (*src_stack)->head);
+			(*src_stack)->head = tmp;
+			(*src_stack)->head->previous_node = (*src_stack)->tail;
+			ft_printf("p%c\n", s);
+		}
+	}
 }
 
 void	rotate_stack(t_stack **stack, char s)
