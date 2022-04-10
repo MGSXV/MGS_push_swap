@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:06:34 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/10 01:24:07 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/10 21:18:20 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ void	ft_add_node_at_first(t_stack **stack, t_node *new_node)
 		(*stack)->head->previous_node = (*stack)->tail;
 		(*stack)->tail->next_node = NULL;
 	}
+	(*stack)->size++;
 }
