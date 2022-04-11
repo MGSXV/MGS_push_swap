@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 22:21:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/10 21:23:29 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/11 01:49:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	reverse_rotate_stack(t_stack **stack, char s)
 			tmp->next_node = (*stack)->head;
 			(*stack)->head = tmp;
 			if (s)
-				ft_printf("r%c\n", s);
+				ft_printf("rr%c\n", s);
 		}
 	}
 }
