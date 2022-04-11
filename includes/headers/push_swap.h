@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/07 23:38:42 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/11 02:30:16 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 // Manage errors functions
 void	ft_error(const char *err_msg, t_stack **stack);
 void	ft_free_all(t_stack **stack);
+int		ft_is_sorted(t_stack **stack);
 // Parssing arguments functions
 int		is_in_int_range(long n);
 char	*is_str_digit(char *s);
@@ -34,5 +35,8 @@ void	rotate_stack(t_stack **stack, char s);
 void	rrotate_stack(t_stack **stack_1, t_stack **stack_2);
 void	reverse_rotate_stack(t_stack **stack, char s);
 void	rreverse_rotate_stack(t_stack **stack_1, t_stack **stack_2);
+// Stack sorting algorithm
+void	push_swap(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif
