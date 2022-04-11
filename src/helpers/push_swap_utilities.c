@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 21:39:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/10 21:45:05 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/11 00:41:57 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_is_sorted(t_stack **stack)
 	tmp = (*stack)->head;
 	while (tmp)
 	{
-		if (tmp->data > tmp->next_node->next_node)
+		if (tmp->data > tmp->next_node->data)
 			return (0);
 		tmp = tmp->next_node;
 	}
