@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 21:39:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/11 00:41:57 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/11 23:14:41 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,19 @@ int	ft_is_sorted(t_stack **stack)
 		tmp = tmp->next_node;
 	}
 	return (1);
+}
+
+void	ft_get_max_and_min(t_stack **stack, int num)
+{
+	if ((*stack)->size == 0)
+	{
+		(*stack)->max = num;
+		(*stack)->min = num;
+		return ;
+	}
+	if (num > (*stack)->max)
+		(*stack)->max = num;
+	if (num < (*stack)->min)
+		(*stack)->min = num;
+	return ;
 }
