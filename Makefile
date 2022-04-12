@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/29 22:26:49 by sel-kham          #+#    #+#              #
-#    Updated: 2022/04/11 00:44:19 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/04/12 05:11:29 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ HELPERS_DIR := $(SRC_DIR)/helpers
 APP_DIR := $(SRC_DIR)/app
 
 SRC := $(HELPERS_DIR)/ft_error.c $(HELPERS_DIR)/doubly_linked_list.c $(HELPERS_DIR)/push_swap_utilities.c \
-	$(APP_DIR)/manage_stacks.c $(APP_DIR)/manage_inputs.c $(APP_DIR)/manage_stack_merg.c $(APP_DIR)/push_swap.c
+	$(APP_DIR)/manage_stacks.c $(APP_DIR)/manage_inputs.c $(APP_DIR)/manage_stack_merg.c $(APP_DIR)/push_swap.c $(APP_DIR)/ft_radix.c
 
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
