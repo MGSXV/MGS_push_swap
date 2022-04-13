@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 23:24:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/12 02:31:11 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/13 00:50:28 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ Try \"--help\" for more information.\n", stack);
 			ft_error("\"push_swap\" requires minimum of one argument \
 passed as fllows:\n$> ./push_swap arg1 arg2 arg3 arg4 ...\n", stack);
 		else if (!is_str_digit(av[1]) || !is_in_int_range(ft_atoi(av[1])))
-				ft_error("Error!\n", stack);
+			ft_error("Error!\n", stack);
 		else
 			ft_error("", stack);
 	}
