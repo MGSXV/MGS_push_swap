@@ -6,13 +6,13 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 21:39:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/13 00:47:01 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/13 02:40:58 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/push_swap.h"
 
-int	ft_is_sorted(t_stack **stack)
+int	ft_is_increasing(t_stack **stack)
 {
 	t_node	*tmp;
 
@@ -24,6 +24,25 @@ int	ft_is_sorted(t_stack **stack)
 			if (!tmp->next_node)
 				break ;
 			if (tmp->data > tmp->next_node->data)
+				return (0);
+			tmp = tmp->next_node;
+		}
+	}
+	return (1);
+}
+
+int	ft_is_decreasing(t_stack **stack)
+{
+	t_node	*tmp;
+
+	if (stack && *stack)
+	{
+		tmp = (*stack)->head;
+		while (tmp)
+		{
+			if (!tmp->next_node)
+				break ;
+			if (tmp->data < tmp->next_node->data)
 				return (0);
 			tmp = tmp->next_node;
 		}
