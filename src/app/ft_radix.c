@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 01:27:20 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/13 01:07:43 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/13 20:19:02 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	ft_radix(t_stack **stack_a, t_stack **stack_b)
 			num = (*stack_a)->head->index;
 			if (((num >> i) & 1))
 				rotate_stack(stack_a, 'a');
-			else if (!((num >> i) & 1) && !ft_is_sorted(stack_a))
+			else if (!((num >> i) & 1) && !ft_is_increasing(stack_a))
 				push_stack(stack_a, stack_b, 'b');
 		}
 		while ((*stack_b)->head)
-			push_stack(stack_b, stack_a, 'a');
+			push_stack(stack_b, stack_a, 'a');	
 	}
 }
