@@ -6,13 +6,13 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/13 02:38:23 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/15 23:51:48 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/headers/push_swap.h"
 
-static void	ft_init_stack(t_stack **stack)
+void	ft_init_stack(t_stack **stack)
 {
 	(*stack)->head = NULL;
 	(*stack)->size = 0;
