@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:55:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/12 00:53:56 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/14 21:55:12 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct s_node
 	struct s_node	*previous_node;
 	int				data;
 	int				index;
+	int				len;
+	int				sub_seq;
 	int				is_negative;
 }	t_node;
 

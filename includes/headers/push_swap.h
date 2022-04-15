@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/13 02:38:16 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/15 19:45:14 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 void	ft_error(const char *err_msg, t_stack **stack);
 void	ft_free_all(t_stack **stack);
 // Helper function
+void	ft_init_stack(t_stack **stack);
 int		ft_is_increasing(t_stack **stack);
 int	    ft_is_decreasing(t_stack **stack);
 void	ft_get_max_and_min(t_stack **stack, int num);
@@ -45,6 +46,6 @@ void	rreverse_rotate_stack(t_stack **stack_1, t_stack **stack_2);
 // Stack sorting algorithm
 void	push_swap(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b);
-void	ft_radix(t_stack **stack_a, t_stack **stack_b);
+void	ft_lis(t_stack **stack);
 
 #endif
