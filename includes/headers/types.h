@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:55:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/18 04:40:49 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/18 19:51:56 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,17 @@ typedef struct s_node
 	struct s_node	*previous_node;
 	int				data;
 	int				index;
+	bool			keep_in;
 }	t_node;
 
 typedef struct s_stack
 {
 	t_node	*head;
 	t_node	*tail;
+	t_node	*max;
+	t_node	*min;
 	int		size;
 	int		is_sorted;
-	int		max;
-	int		min;
 }	t_stack;
 
 #endif

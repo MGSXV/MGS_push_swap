@@ -6,13 +6,14 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/18 05:08:22 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/18 19:53:48 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include<stdbool.h>
 # include<limits.h>
 # include "types.h"
 
@@ -23,7 +24,7 @@ void	ft_free_all(t_stack **stack);
 void	ft_init_stack(t_stack **stack);
 int		ft_is_increasing(t_stack **stack);
 int		ft_is_decreasing(t_stack **stack);
-void	ft_get_max_and_min(t_stack **stack, int num);
+void	ft_get_max_and_min(t_stack **stack, t_node *num);
 void	ft_swap(int *n1, int *n2);
 void	ft_insertion_sort(int *tab, int size);
 int		get_index(int *tab, int num, int size);
@@ -46,6 +47,6 @@ void	rreverse_rotate_stack(t_stack **stack_1, t_stack **stack_2);
 // Stack sorting algorithm
 void	push_swap(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b);
-void	ft_lis(t_stack **stack);
+int 	*ft_lis(t_stack **stack);
 
 #endif
