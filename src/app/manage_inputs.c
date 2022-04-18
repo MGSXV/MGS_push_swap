@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 23:24:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/15 23:49:48 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/18 19:52:59 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ void	ft_parssing_args(int ac, char **av, t_stack **stack)
 			if (!is_str_digit(av[i]) || !is_in_int_range(num)
 				|| !ft_is_num_dup(&(*stack)->head, num))
 				ft_error("Error!\n", stack);
-			ft_get_max_and_min(stack, num);
 			tmp = ft_new_node(num);
+			ft_get_max_and_min(stack, tmp);
 			ft_add_node_at_first(stack, tmp);
 		}
 	}
