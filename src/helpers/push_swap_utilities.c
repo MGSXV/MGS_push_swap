@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 21:39:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/18 19:53:34 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/19 01:46:26 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,20 @@ int	ft_is_decreasing(t_stack **stack)
 }
 
 void	ft_get_max_and_min(t_stack **stack, t_node *num)
-{
+{	
 	if ((*stack)->size == 0)
 	{
 		(*stack)->max = num;
 		(*stack)->min = num;
 		return ;
 	}
-	if (num->data > (*stack)->max->data)
-		(*stack)->max = num;
-	if (num->data < (*stack)->min->data)
-		(*stack)->min = num;
-	return ;
+	else
+	{
+		if (num->data > (*stack)->max->data)
+			(*stack)->max = num;
+		else if (num->data < (*stack)->min->data)
+			(*stack)->min = num;
+	}
 }
 
 int	get_index(int *tab, int num, int size)
@@ -84,12 +86,11 @@ void	ft_indexing(t_stack **stack)
 
 	tab = malloc(sizeof(int) * (*stack)->size);
 	tmp = (*stack)->head;
-	i = 0;
+	i = -1;
 	while (tmp)
 	{
-		tab[i] = tmp->data;
+		tab[++i] = tmp->data;
 		tmp = tmp->next_node;
-		i++;
 	}
 	ft_insertion_sort(tab, (*stack)->size);
 	tmp = (*stack)->head;
