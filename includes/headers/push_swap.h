@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/18 19:53:48 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/19 01:20:21 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	rreverse_rotate_stack(t_stack **stack_1, t_stack **stack_2);
 void	push_swap(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b);
 int 	*ft_lis(t_stack **stack);
+void	ft_birng_min_to_top(t_stack **stack);
 
 #endif
