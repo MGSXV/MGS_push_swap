@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/15 23:51:48 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/19 01:18:44 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	ft_init_stack(t_stack **stack)
 {
 	(*stack)->head = NULL;
+	(*stack)->max = NULL;
+	(*stack)->min = NULL;
 	(*stack)->size = 0;
 	(*stack)->is_sorted = 0;
 }
@@ -40,14 +42,14 @@ int	main(int c, char **v)
 	stack_a = (t_stack *) malloc(sizeof(t_stack));
 	if (!stack_a)
 		return (0);
-	if (ft_is_increasing(&stack_a))
-		ft_error("", &stack_a);
 	stack_b = (t_stack *) malloc(sizeof(t_stack));
 	if (!stack_b)
 		return (0);
-	ft_init_stack(&stack_b);
 	ft_init_stack(&stack_a);
+	ft_init_stack(&stack_b);
 	ft_parssing_args(c, v, &stack_a);
+	if (ft_is_increasing(&stack_a))
+		ft_error("", &stack_a);
 	ft_indexing(&stack_a);
 	push_swap(&stack_a, &stack_b);
 	ft_free_all(&stack_a);
