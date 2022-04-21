@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 06:57:11 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/21 22:19:59 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/21 22:27:36 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,14 @@ void	get_lis_from_stack(t_stack **stack)
 {
 	t_node	*tmp;
 	int		searcher;
+	int		i;
 
 	ft_lis(stack);
-	tmp = (*stack)->head;
+	tmp = (*stack)->min;
 	tmp->is_in_lis = true;
 	searcher = tmp->lis;
-	while (tmp)
+	i = -1;
+	while (++i < (*stack)->size)
 	{
 		if (tmp->lis == searcher - 1)
 		{
@@ -78,5 +80,7 @@ void	get_lis_from_stack(t_stack **stack)
 			searcher--;
 		}
 		tmp = tmp->next_node;
+		if (!tmp)
+			tmp = (*stack)->head;
 	}
 }
