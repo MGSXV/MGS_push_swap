@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 06:57:11 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/21 02:24:43 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/21 22:19:59 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,36 +38,26 @@ static void	fill_stack(t_stack **stack)
 void	ft_lis(t_stack **stack)
 {
 	int		i;
+	int		j;
 	t_node	*current;
 	t_node	*previous;
 
 	fill_stack(stack);
-	current = (*stack)->tail;
-	i = -1;
-	while (++i < (*stack)->size)
+	current = (*stack)->min->previous_node;
+	i = (*stack)->size;
+	while (i--)
 	{
 		previous = current;
-		while (previous->next_node)
+		j = i;
+		while (++j < (*stack)->size)
 		{
 			previous = previous->next_node;
+			if (!previous)
+				previous = (*stack)->head;
 			if (current->data < previous->data)
 				current->lis = ft_get_max_num(current->lis, previous->lis + 1);
 		}
 		current = current->previous_node;
-	}
-}
-
-void	ft_birng_min_to_top(t_stack **stack)
-{
-	int		size;
-
-	size = (*stack)->size;
-	while (!((*stack)->min->data == (*stack)->head->data))
-	{
-		if ((*stack)->min->index >= (*stack)->size / 2)
-			rotate_stack(stack, 'a');
-		else
-			reverse_rotate_stack(stack, 'a');
 	}
 }
 
@@ -76,7 +66,6 @@ void	get_lis_from_stack(t_stack **stack)
 	t_node	*tmp;
 	int		searcher;
 
-	ft_birng_min_to_top(stack);
 	ft_lis(stack);
 	tmp = (*stack)->head;
 	tmp->is_in_lis = true;
