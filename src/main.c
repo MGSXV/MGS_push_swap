@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/21 00:40:47 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/21 00:56:08 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_init_stack(t_stack **stack)
 	(*stack)->head = NULL;
 	(*stack)->max = NULL;
 	(*stack)->min = NULL;
-	(*stack)->last_lis = NULL;
 	(*stack)->size = 0;
 	(*stack)->is_sorted = 0;
 }
