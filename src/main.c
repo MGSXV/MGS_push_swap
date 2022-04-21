@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/21 00:56:08 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/21 20:33:31 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,39 @@ void	ft_print_stack(t_stack **stack)
 	t_node	*tmp;
 
 	tmp = (*stack)->head;
+	printf("\n");
+	printf("Data		: ");
 	while (tmp)
 	{
-		ft_printf("%d, ", tmp->data, tmp->index);
+		printf("%2d, ", tmp->data);
 		tmp = tmp->next_node;
 	}
-	ft_printf("\n");
+	tmp = (*stack)->head;
+	printf("\n");
+	printf("Index		: ");
+	while (tmp)
+	{
+		printf("%2d, ", tmp->index);
+		tmp = tmp->next_node;
+	}
+	printf("\n");
+	tmp = (*stack)->head;
+	printf("LIS		: ");
+	while (tmp)
+	{
+		printf("%2d, ", tmp->lis);
+		tmp = tmp->next_node;
+	}
+	printf("\n");
+	tmp = (*stack)->head;
+	printf("Is in lis	: ");
+	while (tmp)
+	{
+		printf("%2d, ", tmp->is_in_lis);
+		tmp = tmp->next_node;
+	}
+	printf("\n");
+	printf("\n");
 }
 
 int	main(int c, char **v)
@@ -52,6 +79,7 @@ int	main(int c, char **v)
 		ft_error("", &stack_a);
 	ft_indexing(&stack_a);
 	push_swap(&stack_a, &stack_b);
+	ft_print_stack(&stack_a);
 	ft_free_all(&stack_b);
 	ft_free_all(&stack_a);
 	return (0);
