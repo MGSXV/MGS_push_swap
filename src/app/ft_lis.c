@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 06:57:11 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/20 01:57:21 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/21 00:52:45 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,39 +29,34 @@ static void	fill_stack(t_stack **stack)
 	while (tmp)
 	{
 		tmp->index = i++;
+		tmp->lis = 1;
 		tmp->is_in_lis = false;
 		tmp = tmp->next_node;
 	}
 }
 
-int	*ft_lis(t_stack **stack)
+void	ft_lis(t_stack **stack)
 {
-	int		*lis;
-	int		*nums;
 	int		i;
-	int		j;
-	t_node	*tmp;
+	t_node	*current;
+	t_node	*previous;
 
-	lis = malloc(sizeof(int) * (*stack)->size);
-	nums = malloc(sizeof(int) * (*stack)->size);
-	i = -1;
-	tmp = (*stack)->head;
-	while (++i < (*stack)->size && tmp)
-	{
-		nums[i] = tmp->data;
-		lis[i] = 1;
-		tmp = tmp->next_node;
-	}
 	fill_stack(stack);
-	i = (*stack)->size - 1;
-	while (i--)
+	current = (*stack)->tail;
+	i = -1;
+	while (++i < (*stack)->size)
 	{
-		j = i;
-		while (++j < (*stack)->size)
-			if (nums[i] < nums[j])
-				lis[i] = ft_get_max_num(lis[i], lis[j] + 1);
+		previous = current;
+		while (previous->next_node)
+		{
+			previous = previous->next_node;
+			if (current->data < previous->data)
+			{
+				current->lis = ft_get_max_num(current->lis, previous->lis + 1);
+			}
+		}
+		current = current->previous_node;
 	}
-	return (lis);
 }
 
 void	ft_birng_min_to_top(t_stack **stack)
@@ -74,65 +69,28 @@ void	ft_birng_min_to_top(t_stack **stack)
 		if ((*stack)->min->index >= (*stack)->size / 2)
 			rotate_stack(stack, 'a');
 		else
-			reverse_rotate_stack(stack, 'a');\
+			reverse_rotate_stack(stack, 'a');
 	}
 }
 
 void	get_lis_from_stack(t_stack **stack)
 {
 	t_node	*tmp;
-	t_node	*last_node;
-	int		*lis;
-	int		i;
-	int		j;
-	int		size;
-	int		last_lis;
+	int		searcher;
 
-	size = (*stack)->size;
 	ft_birng_min_to_top(stack);
-	lis = ft_lis(stack);
+	ft_lis(stack);
 	tmp = (*stack)->head;
-	i = -1;
-	while (tmp && ++i < size)
+	tmp->is_in_lis = true;
+	(*stack)->last_lis = (*stack)->head;
+	searcher = tmp->lis;
+	while (tmp)
 	{
-		if (!i)
+		if (tmp->lis == searcher - 1)
 		{
 			tmp->is_in_lis = true;
-			last_node = tmp;
-			last_lis = lis[i];
-		}
-		else
-		{
-			j = i;
-			while (++j <= size)
-			{
-				if (last_lis == lis[i] + 1 && tmp->data > last_node->data)
-				{
-					tmp->is_in_lis = true;
-					last_node = tmp;
-					last_lis = lis[i];
-					break ;
-				}
-			}
+			searcher--;
 		}
 		tmp = tmp->next_node;
 	}
-	tmp = (*stack)->head;
-	while (tmp)
-	{
-		printf("%2d, ", tmp->data);
-		tmp = tmp->next_node;
-	}
-	printf("\n");
-	tmp = (*stack)->head;
-	while (tmp)
-	{
-		printf("%2d, ", tmp->is_in_lis);
-		tmp = tmp->next_node;
-	}
-	printf("\n");
-	i = -1;
-	while (++i < (*stack)->size)
-		printf("%2d, ", lis[i]);
-	printf("\n");
 }
