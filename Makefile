@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/29 22:26:49 by sel-kham          #+#    #+#              #
-#    Updated: 2022/04/21 02:45:12 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/04/21 02:57:59 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ $(LIBFT): $(shell find $(LIBFT_DIR) -name "*.c" -type f)
 	@$(MAKE) -C $(LIBFT_DIR)/
 
 $(PRINTF): $(shell find $(PRINTF_DIR) -name "*.c" -type f)
-	@echo "$(GREEN)Making $(WHITE)libft files..."
+	@echo "$(GREEN)Making $(WHITE)ft_printf files..."
 	@$(MAKE) -C $(PRINTF_DIR)/
 
 clean:
