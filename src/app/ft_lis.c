@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 06:57:11 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/21 00:56:04 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/21 02:24:43 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,7 @@ void	ft_lis(t_stack **stack)
 		{
 			previous = previous->next_node;
 			if (current->data < previous->data)
-			{
 				current->lis = ft_get_max_num(current->lis, previous->lis + 1);
-			}
 		}
 		current = current->previous_node;
 	}
