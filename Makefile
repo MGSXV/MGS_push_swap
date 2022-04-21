@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/29 22:26:49 by sel-kham          #+#    #+#              #
-#    Updated: 2022/04/14 21:23:39 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/04/21 02:45:12 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,14 +65,16 @@ $(PRINTF): $(shell find $(PRINTF_DIR) -name "*.c" -type f)
 	@$(MAKE) -C $(PRINTF_DIR)/
 
 clean:
+	@echo "$(RED)Removing $(WHITE)push_swap object files..."
+	@rm -rf $(NAME)
 	@echo "$(RED)Removing $(WHITE)ft_printf object files..."
 	@$(MAKE) -C $(PRINTF_DIR)/ clean
 	@echo "$(RED)Removing $(WHITE)libft object files..."
 	@$(MAKE) -C $(LIBFT_DIR)/ clean
 
-fclean:
+fclean: clean
 	@echo "$(RED)Removing $(WHITE)push_swap executable file..."
-	@rm -rf $(NAME)
+	@rm -rf $(OBJ_DIR)/*.o
 	@echo "$(RED)Removing $(WHITE)ft_printf static library file..."
 	@$(MAKE) -C $(PRINTF_DIR)/ fclean
 	@echo "$(RED)Removing $(WHITE)libft static library file..."
