@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 22:31:19 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/22 02:17:42 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/22 02:41:59 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,17 @@ void	ft_push_to_stack_b(t_stack **stack_a, t_stack **stack_b)
 			tmp = tmp->next_node;
 		else
 		{
-			if (tmp->index)
+			while (tmp->index)
 			{
-				while (tmp->index)
-				{
-					if (tmp->index <= (*stack_a)->size)
-						rotate_stack(stack_a, 'a');
-					else
-						reverse_rotate_stack(stack_a, 'a');
-					ft_index_stack(stack_a);
-				}
+				if (tmp->index <= (*stack_a)->size)
+					rotate_stack(stack_a, 'a');
+				else
+					reverse_rotate_stack(stack_a, 'a');
+				ft_index_stack(stack_a);
 			}
 			push_stack(stack_a, stack_b, 'b');
 			tmp = (*stack_a)->head;
 			ft_index_stack(stack_a);
 		}
 	}
-	ft_index_stack(stack_a);
-	ft_index_stack(stack_b);
 }
