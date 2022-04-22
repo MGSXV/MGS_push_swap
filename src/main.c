@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/22 02:21:53 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/22 02:30:44 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_print_stack(t_stack **stack)
 	printf("Data		: ");
 	while (tmp)
 	{
-		printf("%2d, ", tmp->data);
+		printf("%3d, ", tmp->data);
 		tmp = tmp->next_node;
 	}
 	tmp = (*stack)->head;
@@ -38,7 +38,7 @@ void	ft_print_stack(t_stack **stack)
 	printf("Index		: ");
 	while (tmp)
 	{
-		printf("%2d, ", tmp->index);
+		printf("%3d, ", tmp->index);
 		tmp = tmp->next_node;
 	}
 	printf("\n");
@@ -46,7 +46,7 @@ void	ft_print_stack(t_stack **stack)
 	printf("LIS		: ");
 	while (tmp)
 	{
-		printf("%2d, ", tmp->lis);
+		printf("%3d, ", tmp->lis);
 		tmp = tmp->next_node;
 	}
 	printf("\n");
@@ -54,7 +54,7 @@ void	ft_print_stack(t_stack **stack)
 	printf("Is in lis	: ");
 	while (tmp)
 	{
-		printf("%2d, ", tmp->is_in_lis);
+		printf("%3d, ", tmp->is_in_lis);
 		tmp = tmp->next_node;
 	}
 	printf("\n");
