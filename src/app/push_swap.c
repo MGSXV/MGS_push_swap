@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 21:14:37 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/19 01:53:50 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/21 23:48:04 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ void	ft_sort_base_case(t_stack **stack_a)
 
 void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	stack_b = NULL;
-	get_lis_from_stack(stack_a);
+	ft_push_to_stack_b(stack_a, stack_b);
 }
 
 void	push_swap(t_stack **stack_a, t_stack **stack_b)
