@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/22 02:20:55 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/22 02:29:12 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_insertion_sort(int *tab, int size);
 int		get_index(int *tab, int num, int size);
 void	ft_sorted_indexing(t_stack **stack);
 void	ft_index_stack(t_stack **stack);
+void	ft_print_stack(t_stack **stack);
 // Parssing arguments functions
 int		is_in_int_range(long n);
 char	*is_str_digit(char *s);
