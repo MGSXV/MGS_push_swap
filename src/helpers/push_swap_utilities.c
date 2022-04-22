@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 21:39:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/19 01:46:26 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/22 02:21:02 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	get_index(int *tab, int num, int size)
 	return (-1);
 }
 
-void	ft_indexing(t_stack **stack)
+void	ft_sorted_indexing(t_stack **stack)
 {
 	t_node	*tmp;
 	int		*tab;

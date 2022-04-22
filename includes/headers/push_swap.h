@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/21 22:21:21 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/22 02:20:55 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	ft_get_max_and_min(t_stack **stack, t_node *num);
 void	ft_swap(int *n1, int *n2);
 void	ft_insertion_sort(int *tab, int size);
 int		get_index(int *tab, int num, int size);
-void	ft_indexing(t_stack **stack);
+void	ft_sorted_indexing(t_stack **stack);
+void	ft_index_stack(t_stack **stack);
 // Parssing arguments functions
 int		is_in_int_range(long n);
 char	*is_str_digit(char *s);
@@ -49,5 +50,6 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b);
 void	ft_lis(t_stack **stack);
 void	get_lis_from_stack(t_stack **stack);
+void	ft_push_to_stack_b(t_stack **stack_a, t_stack **stack_b);
 
 #endif
