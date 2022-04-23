@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/22 02:29:12 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/23 21:24:48 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_free_all(t_stack **stack);
 // Helper function
 void	ft_init_stack(t_stack **stack);
 int		ft_is_increasing(t_stack **stack);
-int		ft_is_decreasing(t_stack **stack);
+int 	ft_abs(int nb);
 void	ft_get_max_and_min(t_stack **stack, t_node *num);
 void	ft_swap(int *n1, int *n2);
 void	ft_insertion_sort(int *tab, int size);
@@ -52,5 +52,7 @@ void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b);
 void	ft_lis(t_stack **stack);
 void	get_lis_from_stack(t_stack **stack);
 void	ft_push_to_stack_b(t_stack **stack_a, t_stack **stack_b);
+void	ft_best_move(t_stack **stack_a, t_stack **stack_b);
+void	put_lowest_to_top(t_stack **stack_a);
 
 #endif
