@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 16:51:38 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/09 19:55:44 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/23 04:32:08 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_error(const char *err_msg, t_stack **stack)
 {
 	ft_free_all(stack);
 	ft_printf("%s", err_msg);
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 }
 
 void	ft_free_all(t_stack **stack)
