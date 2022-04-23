@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 21:39:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/22 02:21:02 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/23 21:23:45 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,11 @@ int	ft_is_increasing(t_stack **stack)
 	return (1);
 }
 
-int	ft_is_decreasing(t_stack **stack)
+int	ft_abs(int nb)
 {
-	t_node	*tmp;
-
-	if (stack && *stack)
-	{
-		tmp = (*stack)->head;
-		while (tmp)
-		{
-			if (!tmp->next_node)
-				break ;
-			if (tmp->data < tmp->next_node->data)
-				return (0);
-			tmp = tmp->next_node;
-		}
-	}
-	return (1);
+	if (nb < 0)
+		return (-(nb));
+	return (nb);
 }
 
 void	ft_get_max_and_min(t_stack **stack, t_node *num)
@@ -96,7 +84,7 @@ void	ft_sorted_indexing(t_stack **stack)
 	tmp = (*stack)->head;
 	while (tmp)
 	{
-		tmp->index = get_index(tab, tmp->data, (*stack)->size) + 1;
+		tmp->sorted_index = get_index(tab, tmp->data, (*stack)->size) + 1;
 		tmp = tmp->next_node;
 		i++;
 	}
