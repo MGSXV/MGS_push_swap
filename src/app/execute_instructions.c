@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 02:41:42 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/24 03:21:36 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/24 04:52:14 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	similar_moves(t_node *node, t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-static void	other_moves(t_node *node, t_stack **stack_a, t_stack **stack_b)
+static void	other_moves(t_node *node, t_stack **stack_b)
 {
 	while (node->move_b)
 	{
@@ -48,7 +48,7 @@ static void	other_moves(t_node *node, t_stack **stack_a, t_stack **stack_b)
 void	execte_moves(t_node *node, t_stack **stack_a, t_stack **stack_b)
 {
 	similar_moves(node, stack_a, stack_b);
-	other_moves(node, stack_a, stack_b);
+	other_moves(node, stack_b);
 	while (node->move_a)
 	{
 		if (node->move_a > 0)
