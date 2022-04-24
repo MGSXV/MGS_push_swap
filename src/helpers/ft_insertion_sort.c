@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 00:43:14 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/13 00:43:41 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/24 02:40:55 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@ void	ft_swap(int *n1, int *n2)
 	tmp = *n1;
 	*n1 = *n2;
 	*n2 = tmp;
+}
+
+void	ft_index_stack(t_stack **stack)
+{
+	int		i;
+	t_node	*tmp;
+
+	tmp = (*stack)->head;
+	i = 0;
+	while (tmp)
+	{
+		tmp->index = i++;
+		tmp = tmp->next_node;
+	}
 }
 
 void	ft_insertion_sort(int *tab, int size)
