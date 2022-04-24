@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/22 02:30:44 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/24 04:32:53 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,46 +19,6 @@ void	ft_init_stack(t_stack **stack)
 	(*stack)->min = NULL;
 	(*stack)->size = 0;
 	(*stack)->is_sorted = 0;
-}
-
-void	ft_print_stack(t_stack **stack)
-{
-	t_node	*tmp;
-
-	tmp = (*stack)->head;
-	printf("\n");
-	printf("Data		: ");
-	while (tmp)
-	{
-		printf("%3d, ", tmp->data);
-		tmp = tmp->next_node;
-	}
-	tmp = (*stack)->head;
-	printf("\n");
-	printf("Index		: ");
-	while (tmp)
-	{
-		printf("%3d, ", tmp->index);
-		tmp = tmp->next_node;
-	}
-	printf("\n");
-	tmp = (*stack)->head;
-	printf("LIS		: ");
-	while (tmp)
-	{
-		printf("%3d, ", tmp->lis);
-		tmp = tmp->next_node;
-	}
-	printf("\n");
-	tmp = (*stack)->head;
-	printf("Is in lis	: ");
-	while (tmp)
-	{
-		printf("%3d, ", tmp->is_in_lis);
-		tmp = tmp->next_node;
-	}
-	printf("\n");
-	printf("\n");
 }
 
 int	main(int c, char **v)
@@ -78,10 +38,6 @@ int	main(int c, char **v)
 		return (0);
 	ft_init_stack(&stack_b);
 	push_swap(&stack_a, &stack_b);
-	printf("STACK A:\n");
-	ft_print_stack(&stack_a);
-	printf("STACK B:\n");
-	ft_print_stack(&stack_b);
 	ft_free_all(&stack_b);
 	ft_free_all(&stack_a);
 	return (0);
