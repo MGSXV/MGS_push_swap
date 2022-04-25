@@ -6,67 +6,59 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 19:45:07 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/25 01:09:52 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/25 01:26:20 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/push_swap.h"
 
-static int    ft_cmpres(char *s1, char *s2)
+static int	ft_cmpres(char *s1, char *s2)
 {
-    int    i;
+	int	i;
 
-    i = 0;
-    if (!s1 || !s2)
-        return (-1);
-    while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
-    {
-        i++;
-    }
-    if (s1[i] == s2[i])
-        return (0);
-    else
-        return (s1[i] - s2[i]);
+	i = 0;
+	if (!s1 || !s2)
+		return (-1);
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+		i++;
+	if (s1[i] == s2[i])
+		return (0);
+	else
+		return (s1[i] - s2[i]);
 }
 
-void	ft_init_stack(t_stack **stack)
+void	ft_free_and_exit(t_stack **stack_a, t_stack **stack_b)
 {
-	(*stack)->head = NULL;
-	(*stack)->max = NULL;
-	(*stack)->min = NULL;
-	(*stack)->size = 0;
-	(*stack)->is_sorted = 0;
+	ft_free_all(stack_b);
+	ft_error("\033[0;31mError\n", stack_a);
 }
 
-void	exec_instructions(t_stack **stack_a, t_stack **stack_b, char *instruction)
+void	exec_instructions(t_stack **stack_a, t_stack **stack_b, char *ins)
 {
-	if (ft_cmpres("pa\n", instruction) == 0)
+	if (ft_cmpres("pa\n", ins) == 0)
 		push_stack(stack_b, stack_a, 0);
-	else if (ft_cmpres("pb\n", instruction) == 0)
+	else if (ft_cmpres("pb\n", ins) == 0)
 		push_stack(stack_a, stack_b, 0);
-	else if (ft_cmpres("sa\n", instruction) == 0)
+	else if (ft_cmpres("sa\n", ins) == 0)
 		swap_stack(stack_a, 0);
-	else if (ft_cmpres("sb\n", instruction) == 0)
+	else if (ft_cmpres("sb\n", ins) == 0)
 		swap_stack(stack_b, 0);
-	else if (ft_cmpres("ss\n", instruction) == 0)
+	else if (ft_cmpres("ss\n", ins) == 0)
 		sswap_stack(stack_b, stack_b, 0);
-	else if (ft_cmpres("ra\n", instruction) == 0)
+	else if (ft_cmpres("ra\n", ins) == 0)
 		rotate_stack(stack_a, 0);
-	else if (ft_cmpres("rb\n", instruction) == 0)
+	else if (ft_cmpres("rb\n", ins) == 0)
 		rotate_stack(stack_b, 0);
-	else if (ft_cmpres("rr\n", instruction) == 0)
+	else if (ft_cmpres("rr\n", ins) == 0)
 		rrotate_stack(stack_a, stack_b, 0);
-	else if (ft_cmpres("rra\n", instruction) == 0)
+	else if (ft_cmpres("rra\n", ins) == 0)
 		reverse_rotate_stack(stack_a, 0);
-	else if (ft_cmpres("rrb\n", instruction) == 0)
+	else if (ft_cmpres("rrb\n", ins) == 0)
 		reverse_rotate_stack(stack_b, 0);
-	else if (ft_cmpres("rrr\n", instruction) == 0)
+	else if (ft_cmpres("rrr\n", ins) == 0)
 		rreverse_rotate_stack(stack_a, stack_b, 0);
 	else
-	{
-		ft_free_all(stack_b);
-		ft_error("\033[0;31mError\n", stack_a);
-	}
+		ft_free_and_exit(stack_a, stack_b);
 }
 
 void	read_instructions(t_stack **stack_a, t_stack **stack_b)

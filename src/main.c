@@ -6,20 +6,11 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:45:04 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/24 04:32:53 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/25 01:26:26 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/headers/push_swap.h"
-
-void	ft_init_stack(t_stack **stack)
-{
-	(*stack)->head = NULL;
-	(*stack)->max = NULL;
-	(*stack)->min = NULL;
-	(*stack)->size = 0;
-	(*stack)->is_sorted = 0;
-}
 
 int	main(int c, char **v)
 {
