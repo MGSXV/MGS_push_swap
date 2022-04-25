@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 19:45:07 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/25 00:52:51 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/25 01:09:52 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,19 @@ void	exec_instructions(t_stack **stack_a, t_stack **stack_b, char *instruction)
 	else if (ft_cmpres("sb\n", instruction) == 0)
 		swap_stack(stack_b, 0);
 	else if (ft_cmpres("ss\n", instruction) == 0)
-		sswap_stack(stack_b, stack_b);
+		sswap_stack(stack_b, stack_b, 0);
 	else if (ft_cmpres("ra\n", instruction) == 0)
 		rotate_stack(stack_a, 0);
 	else if (ft_cmpres("rb\n", instruction) == 0)
 		rotate_stack(stack_b, 0);
 	else if (ft_cmpres("rr\n", instruction) == 0)
-		rrotate_stack(stack_a, stack_b);
+		rrotate_stack(stack_a, stack_b, 0);
 	else if (ft_cmpres("rra\n", instruction) == 0)
 		reverse_rotate_stack(stack_a, 0);
 	else if (ft_cmpres("rrb\n", instruction) == 0)
 		reverse_rotate_stack(stack_b, 0);
 	else if (ft_cmpres("rrr\n", instruction) == 0)
-		rreverse_rotate_stack(stack_a, stack_b);
+		rreverse_rotate_stack(stack_a, stack_b, 0);
 	else
 	{
 		ft_free_all(stack_b);
@@ -83,6 +83,7 @@ void	read_instructions(t_stack **stack_a, t_stack **stack_b)
 		ft_printf("\033[0;32mOK\n");
 	else
 		ft_printf("\033[0;31mKO\n");
+	free(line);
 }
 
 int	main(int c, char **v)

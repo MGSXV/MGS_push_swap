@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:36:54 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/24 02:43:15 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/25 01:08:09 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ t_node	*ft_new_node(int data);
 void	ft_add_node_at_first(t_stack **stack, t_node *new_node);
 // Stack sorting instructions
 void	swap_stack(t_stack **stack, char s);
-void	sswap_stack(t_stack **stack_a, t_stack **stack_b);
+void	sswap_stack(t_stack **stack_a, t_stack **stack_b, char c);
 void	push_stack(t_stack **src_stack, t_stack **dst_stack, char s);
 void	rotate_stack(t_stack **stack, char s);
-void	rrotate_stack(t_stack **stack_1, t_stack **stack_2);
+void	rrotate_stack(t_stack **stack_1, t_stack **stack_2, char c);
 void	reverse_rotate_stack(t_stack **stack, char s);
-void	rreverse_rotate_stack(t_stack **stack_1, t_stack **stack_2);
+void	rreverse_rotate_stack(t_stack **stack_1, t_stack **stack_2, char c);
 // Stack sorting algorithm
 void	push_swap(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b);
