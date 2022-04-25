@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 19:45:07 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/04/25 00:32:29 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/04/25 00:52:51 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	read_instructions(t_stack **stack_a, t_stack **stack_b)
 		exec_instructions(stack_a, stack_b, line);
 		line = get_next_line(0);
 	}
-	if (ft_is_increasing(stack_a) || (*stack_b)->head)
+	if (ft_is_increasing(stack_a) && !(*stack_b)->head)
 		ft_printf("\033[0;32mOK\n");
 	else
 		ft_printf("\033[0;31mKO\n");
